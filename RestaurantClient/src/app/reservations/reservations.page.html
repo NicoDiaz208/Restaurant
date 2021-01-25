@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Reservations</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col  sizeLg="3" sizeMd="3" sizeXs="3" *ngFor="let table of tables, let i = index">
+        <ion-card [routerLink]="['task-detail/'+table.id]">
+          <ion-card-header>
+            <ion-text>Id: {{table.id}}</ion-text>
+          </ion-card-header>
+          <ion-card-subtitle style="text-align: center;">Chairs: {{table.chairs}}</ion-card-subtitle>
+          <ion-card-content>
+            <ion-chip *ngFor="let reservation of table.reservations">
+              <ion-label>{{reservation.time.toDateString()}}</ion-label>
+            </ion-chip>  
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
