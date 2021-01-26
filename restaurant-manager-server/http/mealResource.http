@@ -24,5 +24,11 @@ POST localhost:8080/api/menu
 Content-Type: application/json
 
 {
-
+  "menuId": 1,
+  "title": "title",
+  "menuItems": [
+    {
+      "menuId": 1,
+      "mealId": 1
+    }]
 }

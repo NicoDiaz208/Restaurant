@@ -24,14 +24,6 @@ public class Menu {
 
     }
 
-    public List<MenuItem> getMenuItemList() {
-        return menuItemList;
-    }
-
-    public void setMenuItemList(List<MenuItem> menuItemList) {
-        this.menuItemList = menuItemList;
-    }
-
     public Short getMenuId() {
         return menuId;
     }

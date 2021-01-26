@@ -4,6 +4,9 @@ public class MenuItemDTO {
     private Short menuId;
     private Integer mealId;
 
+    public MenuItemDTO() {
+    }
+
     public Short getMenuId() {
         return menuId;
     }

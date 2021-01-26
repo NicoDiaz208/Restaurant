@@ -10,5 +10,5 @@ public interface IMenuService {
     public boolean removeMenu(MenuDTO removeMenu);
     public boolean addMenuItem(MenuItemDTO newMenuItem);
     public boolean removeMenuItem(MenuItemDTO removeMenuItem);
-    public List<Menu> getAllMenus();
+    public List<MenuDTO> getAllMenus();
 }
