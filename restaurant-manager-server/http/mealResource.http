@@ -1,0 +1,28 @@
+GET localhost:8080/api/meal/all
+###
+POST localhost:8080/api/meal
+Content-Type: application/json
+
+{
+  "mealId": 5,
+  "name": "mealea1",
+  "desc": "meal one isa good",
+  "mealItems": [
+    {
+      "mealId": 5,
+      "amount": 1,
+      "ingredientId": 1,
+      "available": true
+    }
+  ]
+}
+
+###
+GET localhost:8080/api/menu/all
+###
+POST localhost:8080/api/menu
+Content-Type: application/json
+
+{
+
+}

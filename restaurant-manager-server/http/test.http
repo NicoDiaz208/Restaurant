@@ -1,0 +1,36 @@
+POST http://localhost:8080/api/inventory/ingredient
+Content-Type: application/json
+
+{
+  "ingredientId": 1,
+  "price": 12.22,
+  "name": "wasser"
+}
+
+###
+DELETE http://localhost:8080/api/inventory/ingredient
+Content-Type: application/json
+
+{
+  "ingredientId": 1,
+  "price": 12.22,
+  "name": "wasser"
+}
+###
+
+POST http://localhost:8080/api/inventory/
+Content-Type: application/json
+
+{
+  "inventoryId": 1,
+  "ingredient": {
+    "ingredientId": 1,
+    "price": 12.22,
+    "name": "wasser"
+  },
+  "amount": 22
+
+}
+###
+GET http://localhost:8080/api/inventory/all
+###
