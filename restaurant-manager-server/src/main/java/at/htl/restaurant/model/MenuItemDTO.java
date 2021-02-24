@@ -7,6 +7,11 @@ public class MenuItemDTO {
     public MenuItemDTO() {
     }
 
+    public MenuItemDTO(Short menuId, Integer mealId) {
+        this.menuId = menuId;
+        this.mealId = mealId;
+    }
+
     public Short getMenuId() {
         return menuId;
     }

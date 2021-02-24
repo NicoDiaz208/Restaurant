@@ -5,10 +5,10 @@ import at.htl.restaurant.workloads.order.Order;
 import at.htl.restaurant.workloads.order.OrderItem;
 
 import javax.persistence.*;
+import javax.validation.constraints.Null;
 import java.util.List;
 
 @Entity
-@Table(name = "\"meal\"")
 public class Meal {
     @Id
     private Integer mealId;
@@ -19,7 +19,6 @@ public class Meal {
     private List<MealItem> mealItems;
 
     public Meal() {
-
     }
 
     public Meal(Integer mealId, String name, String desc) {
@@ -50,5 +49,13 @@ public class Meal {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<MealItem> getMealItems() {
+        return mealItems;
+    }
+
+    public void setMealItems(List<MealItem> mealItems) {
+        this.mealItems = mealItems;
     }
 }

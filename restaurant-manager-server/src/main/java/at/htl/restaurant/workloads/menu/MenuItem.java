@@ -2,6 +2,7 @@ package at.htl.restaurant.workloads.menu;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 public class MenuItem {

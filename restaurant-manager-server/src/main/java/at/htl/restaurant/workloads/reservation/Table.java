@@ -11,9 +11,6 @@ public class Table {
     private Short tableId;
     private Short chairs;
 
-    @OneToOne
-    private Reservation reservation;
-
     public Table() {
     }
 
@@ -33,12 +30,5 @@ public class Table {
         this.tableId = tableId;
     }
 
-    public Reservation getReservation() {
-        return reservation;
-    }
-
-    public void setReservation(Reservation reservation) {
-        this.reservation = reservation;
-    }
 }
 

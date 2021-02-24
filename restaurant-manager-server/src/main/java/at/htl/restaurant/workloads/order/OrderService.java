@@ -5,6 +5,7 @@ import at.htl.restaurant.model.OrderItemDTO;
 import at.htl.restaurant.workloads.meal.IMealRepository;
 
 import javax.enterprise.context.RequestScoped;
+import java.util.ArrayList;
 import java.util.List;
 
 @RequestScoped
@@ -58,7 +59,23 @@ public class OrderService implements IOrderService {
     }
 
     @Override
-    public List<Order> getAllOrders() {
-        return orderRepository.getAllOrders();
+    public List<OrderDTO> getAllOrders() {
+        var result = new ArrayList<OrderDTO>();
+        var orderItems = orderRepository.getAllOrderItems();
+
+        orderRepository.getAllOrders().forEach(o -> {
+            var items = new ArrayList<OrderItemDTO>();
+
+            orderItems.forEach(oi -> {
+                items.add(new OrderItemDTO(oi.getId().getMealToOrder().getMealId(), oi.getId().getOrder().getOrderId(), oi.getAmount()));
+            });
+
+            var orderToAdd = new OrderDTO();
+            orderToAdd.setOrderId(o.getOrderId());
+            orderToAdd.setOrderItems(items);
+
+            result.add(orderToAdd);
+        });
+        return result;
     }
 }

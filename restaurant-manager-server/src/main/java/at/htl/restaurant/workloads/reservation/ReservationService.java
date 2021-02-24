@@ -1,8 +1,11 @@
 package at.htl.restaurant.workloads.reservation;
 
+import at.htl.restaurant.model.PersonDTO;
 import at.htl.restaurant.model.ReservationDTO;
+import at.htl.restaurant.model.TableDTO;
 
 import javax.enterprise.context.RequestScoped;
+import java.util.ArrayList;
 import java.util.List;
 
 @RequestScoped
@@ -14,8 +17,17 @@ public class ReservationService implements IReservationService{
     }
 
     @Override
-    public List<Reservation> getAllReservations() {
-        return reservationRepository.getAllReservations();
+    public List<ReservationDTO> getAllReservations() {
+
+        var result = new ArrayList<ReservationDTO>();
+
+        reservationRepository.getAllReservations().forEach(i  -> {
+            var table = reservationRepository.getTableById(i.getTable().getTableId());
+            var person = reservationRepository.getPersonById(i.getId().getPerson().getSsn());
+            result.add(new ReservationDTO(new TableDTO(table.getTableId(), table.getChairs()), i.getTime(),
+                    new PersonDTO(person.getSsn(), person.getPhone(), person.getEmail()),i.getId().getReservationNo()));
+        });
+        return  result;
     }
 
     @Override

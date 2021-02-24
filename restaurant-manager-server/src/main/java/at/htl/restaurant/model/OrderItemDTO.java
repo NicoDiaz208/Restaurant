@@ -5,6 +5,15 @@ public class OrderItemDTO {
     private Integer orderId;
     private Integer amount;
 
+    public OrderItemDTO() {
+    }
+
+    public OrderItemDTO(Integer mealId, Integer orderId, Integer amount) {
+        this.mealId = mealId;
+        this.orderId = orderId;
+        this.amount = amount;
+    }
+
     public Integer getMealId() {
         return mealId;
     }

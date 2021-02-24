@@ -4,7 +4,7 @@ public class MealItemDTO {
     private Integer mealId;
     private Integer amount;
     private Integer ingredientId;
-    private boolean available;
+    private Boolean available;
 
     public MealItemDTO() {
     }
@@ -41,11 +41,11 @@ public class MealItemDTO {
         this.amount = amount;
     }
 
-    public boolean isAvailable() {
+    public Boolean isAvailable() {
         return available;
     }
 
-    public void setAvailable(boolean available) {
+    public void setAvailable(Boolean available) {
         this.available = available;
     }
 }

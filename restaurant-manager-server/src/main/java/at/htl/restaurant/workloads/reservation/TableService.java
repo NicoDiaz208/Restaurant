@@ -21,7 +21,7 @@ public class TableService implements ITableService {
 
         var table = new Table();
         table.setTableId(newTable.getTableId());
-        table.setChairs(newTable.getCharis());
+        table.setChairs(newTable.getChairs());
         reservationRepository.addTable(table);
         return true;
     }
@@ -34,7 +34,7 @@ public class TableService implements ITableService {
 
         var table = new Table();
         table.setTableId(removeTable.getTableId());
-        table.setChairs(removeTable.getCharis());
+        table.setChairs(removeTable.getChairs());
         reservationRepository.removeTable(table);
         return true;
     }

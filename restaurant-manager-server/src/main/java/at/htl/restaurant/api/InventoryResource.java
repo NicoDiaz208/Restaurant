@@ -4,6 +4,7 @@ import at.htl.restaurant.model.IngredientDTO;
 import at.htl.restaurant.model.InventoryDTO;
 import at.htl.restaurant.workloads.inventory.IIngredientService;
 import at.htl.restaurant.workloads.inventory.IInventoryService;
+import at.htl.restaurant.workloads.inventory.Ingredient;
 
 import javax.transaction.Transactional;
 import javax.ws.rs.*;

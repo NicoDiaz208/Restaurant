@@ -1,0 +1,43 @@
+GET localhost:8080/api/order
+###
+POST localhost:8080/api/order
+Content-Type: application/json
+
+{
+  "orderId": 1,
+  "orderItems": [
+    {
+      "mealId": 4,
+      "orderId": 1,
+      "amount" : 43
+    }
+  ]
+}
+###
+GET localhost:8080/api/reservation/all
+###
+POST localhost:8080/api/reservation/table
+Content-Type: application/json
+
+{
+  "tableId": 2,
+  "chairs": 3
+}
+
+###
+POST localhost:8080/api/reservation
+Content-Type: application/json
+
+{
+  "reservationNo": 1,
+  "person": {
+    "ssn": "test12345",
+    "phone": "+43 4223 43234",
+    "email": "test.test@gmail.com"
+  },
+  "time": "2016-03-16T13:56:39.492",
+  "table": {
+    "tableId": 2,
+    "chairs": 3
+  }
+}

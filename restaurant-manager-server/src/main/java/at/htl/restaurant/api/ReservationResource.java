@@ -36,17 +36,15 @@ public class ReservationResource {
     @Transactional
     @POST
     public Response addReservation(ReservationDTO reservationDTO){
+        personService.addPerson(reservationDTO.getPerson());
         var result = reservationService.addReservation(reservationDTO);
-        if(result){
-            personService.addPerson(reservationDTO.getPerson());
-        }
 
         return (result ? Response.ok() : Response.status(Response.Status.BAD_REQUEST)).build();
     }
 
     @Transactional
     @DELETE
-    public Response removeMenu(ReservationDTO reservationDTO){
+    public Response removeReservation(ReservationDTO reservationDTO){
         var result = reservationService.removeReservation(reservationDTO);
         return (result ? Response.ok() : Response.status(Response.Status.BAD_REQUEST)).build();
     }

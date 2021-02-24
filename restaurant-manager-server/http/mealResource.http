@@ -4,12 +4,12 @@ POST localhost:8080/api/meal
 Content-Type: application/json
 
 {
-  "mealId": 5,
+  "mealId": 4,
   "name": "mealea1",
   "desc": "meal one isa good",
   "mealItems": [
     {
-      "mealId": 5,
+      "mealId": 4,
       "amount": 1,
       "ingredientId": 1,
       "available": true
@@ -29,6 +29,7 @@ Content-Type: application/json
   "menuItems": [
     {
       "menuId": 1,
-      "mealId": 1
-    }]
+      "mealId": 4
+    }
+  ]
 }

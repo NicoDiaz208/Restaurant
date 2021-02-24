@@ -38,8 +38,11 @@ public class MealService implements IMealService {
         var existingIngredient = inventoryRepository.getIngredientById(newMealItem.getIngredientId());
         var existingMeal = mealRepository.getMealById(newMealItem.getMealId());
 
-        if(existingIngredient == null || existingMeal == null)
+        if(existingIngredient == null || existingMeal == null){
+            System.out.println("false");
             return false;
+
+        }
 
         var existingMealItem = mealRepository.getMealItemById(new MealItemId(existingIngredient, existingMeal));
         if(existingMealItem != null)
@@ -48,6 +51,7 @@ public class MealService implements IMealService {
         var mealItem = new MealItem();
         mealItem.setId(new MealItemId(existingIngredient, existingMeal));
         mealItem.setAmount(newMealItem.getAmount());
+        mealItem.setAvailable(newMealItem.isAvailable());
         mealRepository.addMealItem(mealItem);
         return true;
     }

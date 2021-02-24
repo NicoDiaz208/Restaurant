@@ -52,4 +52,10 @@ public class OrderRepository implements IOrderRepository {
         query.setParameter("orderId", id.getOrder().getOrderId());
         return query.getResultStream().findFirst().orElse(null);
     }
+
+    @Override
+    public List<OrderItem> getAllOrderItems() {
+        var query = entityManager.createQuery("select oi from OrderItem  oi");
+        return query.getResultList();
+    }
 }

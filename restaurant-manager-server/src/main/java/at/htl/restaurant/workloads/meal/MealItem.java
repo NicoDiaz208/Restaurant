@@ -8,13 +8,13 @@ public class MealItem {
     @Id
     private MealItemId id;
     private Integer amount;
-    private boolean available;
+    private Boolean available;
 
-    public boolean isAvailable() {
+    public Boolean isAvailable() {
         return available;
     }
 
-    public void setAvailable(boolean available) {
+    public void setAvailable(Boolean available) {
         this.available = available;
     }
 

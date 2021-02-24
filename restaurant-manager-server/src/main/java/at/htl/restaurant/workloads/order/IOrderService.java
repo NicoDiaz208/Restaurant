@@ -8,5 +8,5 @@ public interface IOrderService {
     public boolean addOrder(OrderDTO newOrder);
     public boolean addOrderItem(OrderItemDTO newOrderItem);
     public boolean removeOrderItem(OrderItemDTO removeOrderItem);
-    public List<Order> getAllOrders();
+    public List<OrderDTO> getAllOrders();
 }

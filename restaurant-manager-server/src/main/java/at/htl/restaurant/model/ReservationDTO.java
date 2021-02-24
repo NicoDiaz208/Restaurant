@@ -8,6 +8,16 @@ public class ReservationDTO {
     private PersonDTO person;
     private Short reservationNo;
 
+    public ReservationDTO() {
+    }
+
+    public ReservationDTO(TableDTO table, LocalDateTime time, PersonDTO person, Short reservationNo) {
+        this.table = table;
+        this.time = time;
+        this.person = person;
+        this.reservationNo = reservationNo;
+    }
+
     public TableDTO getTable() {
         return table;
     }

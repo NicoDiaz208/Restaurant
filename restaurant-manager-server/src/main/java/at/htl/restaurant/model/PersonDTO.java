@@ -4,7 +4,16 @@ public class PersonDTO {
     private String ssn;
     private String phone;
     private String email;
-    
+
+    public PersonDTO() {
+    }
+
+    public PersonDTO(String ssn, String phone, String email) {
+        this.ssn = ssn;
+        this.phone = phone;
+        this.email = email;
+    }
+
     public String getSsn() {
         return ssn;
     }

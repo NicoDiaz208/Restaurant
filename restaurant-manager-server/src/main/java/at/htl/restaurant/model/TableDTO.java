@@ -2,7 +2,7 @@ package at.htl.restaurant.model;
 
 public class TableDTO {
     private Short tableId;
-    private Short charis;
+    private Short chairs;
 
     public Short getTableId() {
         return tableId;
@@ -12,11 +12,19 @@ public class TableDTO {
         this.tableId = tableId;
     }
 
-    public Short getCharis() {
-        return charis;
+    public TableDTO() {
     }
 
-    public void setCharis(Short charis) {
-        this.charis = charis;
+    public TableDTO(Short tableId, Short chairs) {
+        this.tableId = tableId;
+        this.chairs = chairs;
+    }
+
+    public Short getChairs() {
+        return chairs;
+    }
+
+    public void setChairs(Short chairs) {
+        this.chairs = chairs;
     }
 }

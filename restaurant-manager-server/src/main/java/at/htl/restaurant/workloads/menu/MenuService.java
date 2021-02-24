@@ -5,6 +5,8 @@ import at.htl.restaurant.model.MenuItemDTO;
 import at.htl.restaurant.workloads.meal.IMealRepository;
 
 import javax.enterprise.context.RequestScoped;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 @RequestScoped
@@ -47,7 +49,7 @@ public class MenuService implements IMenuService {
             return false;
 
         var menuItem = new MenuItem();
-        menuItem.setId(existingMenuItem.getId());
+        menuItem.setId(new MenuItemId(existingMenu, existingMeal));
         menuRepository.addMenuItem(menuItem);
         return true;
     }
@@ -70,7 +72,21 @@ public class MenuService implements IMenuService {
     }
 
     @Override
-    public List<Menu> getAllMenus() {
-        return menuRepository.getAllMenus();
+    public List<MenuDTO> getAllMenus() {
+        var result = new ArrayList<MenuDTO>();
+        var items = menuRepository.getAllMenuItems();
+
+        menuRepository.getAllMenus().forEach(i -> {
+            var menuDTO = new MenuDTO();
+            var mItems = new ArrayList<MenuItemDTO>();
+            items.forEach(m -> {
+                mItems.add(new MenuItemDTO(m.getId().getMenu().getMenuId(), m.getId().getMeal().getMealId()));
+            });
+            menuDTO.setMenuItems(mItems);
+            menuDTO.setMenuId(i.getMenuId());
+            menuDTO.setTitle(i.getTitle());
+            result.add(menuDTO) ;
+        });
+        return result;
     }
 }
