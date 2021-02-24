@@ -1,3 +1,3 @@
 # Restaurant
 
-![Restaurant](RestaurantManager_ERD.png
+![Restaurant](RestaurantManager_ERD.png)
